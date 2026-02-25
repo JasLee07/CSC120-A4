@@ -1,4 +1,4 @@
-public class Passenger {
+public class Passenger implements PassengerRequirements {
     
     private String name;
 
