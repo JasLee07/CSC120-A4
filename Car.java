@@ -36,6 +36,12 @@ public class Car implements CarRequirements {
         }
 
         public void printManifest(){
-            
+            if (this.seatsRemaining() == this.maxCapacity){
+                System.out.println("This car is empty");
+            } 
+            for(int i = 0; i < passengersOnBoard.size(); i++){
+                String person = passengersOnBoard.get(i).getName();
+                System.out.println(person);
+            }
         }
 }
