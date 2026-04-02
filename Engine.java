@@ -3,13 +3,13 @@ class Engine implements EngineRequirements{
     // `FuelType` attribute to indicate what type of fuel it uses, and `double`s to store the current and maximum fuel levels
     private FuelType fuelType;
     private double currentFuellevel;
-    private double maxFuellevel;
+    private double fuelCapacity;
     
     // a constructor, which takes in initial values for the attributes named above and sets them appropriately
-    public Engine(FuelType fuelType, double currentFuellevel, double maxFuellevel){
+    public Engine(FuelType fuelType, double currentFuellevel, double fuelCapacity){
         this.fuelType = fuelType;
         this.currentFuellevel = currentFuellevel;
-        this.maxFuellevel = maxFuellevel;
+        this.fuelCapacity = fuelCapacity;
     }
     
     public FuelType getFuelType(){
@@ -17,7 +17,7 @@ class Engine implements EngineRequirements{
     }
 
     public double getMaxFuel(){
-        return maxFuellevel;
+        return fuelCapacity;
     }
 
     public double getCurrentFuel(){
@@ -26,7 +26,7 @@ class Engine implements EngineRequirements{
 
     public void refuel(){
         System.out.println("Refueling...");
-        this.currentFuellevel = this.maxFuellevel;
+        this.currentFuellevel = this.fuelCapacity;
     }
 
     // a `go()` which will decrease the current fuel level, print some useful information (e.g. remaining fuel level), 
@@ -41,7 +41,7 @@ class Engine implements EngineRequirements{
         }
     }
     
-    /* public static void main(String[] args) {
+    public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 25.0, 100.0);
         while (myEngine.go()) {
             System.out.println("Choo choo!");
@@ -49,5 +49,5 @@ class Engine implements EngineRequirements{
         System.out.println("Out of fuel.");
         myEngine.refuel();
         System.out.println("You are now at 100%");
-    */
+}
 }

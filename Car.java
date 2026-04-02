@@ -19,6 +19,10 @@ public class Car implements CarRequirements {
         return maxCapacity;
     }
 
+    public ArrayList<Passenger> getPassengersOnBoard(){
+        return this.passengersOnBoard;
+    }
+
     public int seatsRemaining(){
         return maxCapacity-passengersOnBoard.size();
     }
